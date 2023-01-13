@@ -36,8 +36,6 @@ jobs:
           path: "docs/CHANGELOG.md"
           version: ${{ github.ref_name }}
 
-      
-
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
@@ -58,6 +56,6 @@ jobs:
           prerelease: false
           body: ${{ steps.changelog.outputs.changes }}
           files: |
-            dist/*
+            dist/docker-machine-driver-outscale*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
